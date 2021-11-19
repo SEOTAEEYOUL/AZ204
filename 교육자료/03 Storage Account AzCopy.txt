@@ -1,0 +1,5 @@
+azcopy copy "C:\AzureDemo\Images\*" "https://hahaysh08sta.blob.core.windows.net/zerg?sv=2020-08-04&ss=b&srt=sco&sp=rwdlacitfx&se=2021-11-19T08:20:40Z&st=2021-11-17T00:20:40Z&sip=211.243.13.140&spr=https&sig=6dPgsS7B2j4RqkAWn5RkXkITPIkEPXwABPP%2FTH1mqeU%3D"  --recursive
+
+azcopy sync "C:\AzureDemo\Images" "https://hahaysh08sta.blob.core.windows.net/zerg?sv=2020-08-04&ss=b&srt=sco&sp=rwdlacitfx&se=2021-11-19T08:20:40Z&st=2021-11-17T00:20:40Z&sip=211.243.13.140&spr=https&sig=6dPgsS7B2j4RqkAWn5RkXkITPIkEPXwABPP%2FTH1mqeU%3D"  --recursive
+
+azcopy copy "https://hahaysh08sta.blob.core.windows.net/zerg/*?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2021-11-19T08:30:57Z&st=2021-11-17T00:30:57Z&spr=https&sig=7ewqO9cvPbZVlPMOF2e735CQH%2Fgs6NS2ZAiYeXg7v5I%3D" "https://hahaysh08sta.blob.core.windows.net/terran?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2021-11-19T08:30:57Z&st=2021-11-17T00:30:57Z&spr=https&sig=7ewqO9cvPbZVlPMOF2e735CQH%2Fgs6NS2ZAiYeXg7v5I%3D" --recursive

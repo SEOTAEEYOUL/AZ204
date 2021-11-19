@@ -1,0 +1,45 @@
+TechSkillsSupport@microsoft.com
+Delivery ID : 33786
+2021년 11월 15일~
+AZ-204 Developing Solutions for Microsoft Azure
+
+https://1drv.ms/u/s!AmlADRmU8M8uk_h_GY-jXnm09_asPg?e=c0BjUn
+
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjE0MmMzMmQtOWRlZi00MjZiLTllYTYtMGRjMzQ3YzUwMGQy%40thread.v2/0?context=%7b%22Tid%22%3a%2272f988bf-86f1-41af-91ab-2d7cd011db47%22%2c%22Oid%22%3a%22c5825cfd-a05b-4288-8c3d-cec2cf365dd6%22%7d
+
+https://dotnet.microsoft.com/download
+https://dotnet.microsoft.com/download/dotnet/3.1
+https://code.visualstudio.com/download#
+
+dotnet --version
+mkdir sample01
+cd sample01
+dotnet new
+#dotnet new mvc
+dotnet new mvc -f netcoreapp3.1 #3.1버전을 지정해서 생성
+dotnet restore
+dotnet build
+code .   
+
+https://filezilla-project.org/download.php?show_all=1
+https://git-scm.com/downloads
+
+
+AZ-104: git clone https://github.com/MicrosoftLearning/AZ-104KO-MicrosoftAzureAdministrator
+AZ-204: git clone https://github.com/MicrosoftLearning/AZ-204KO-DevelopingSolutionsforMicrosoftAzure
+AZ-303 : git clone https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies
+AZ-304 : git clone https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design
+AZ-400 : git clone https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions
+DevOps Labs : https://azuredevopslabs.com/
+AZ-500 : git clone https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
+
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+https://docs.microsoft.com/ko-kr/learn/certifications/
+
+https://esi.learnondemand.net/
+https://azure.microsoft.com/ko-kr/free/
+
+
+

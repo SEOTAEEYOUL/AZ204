@@ -1,0 +1,26 @@
+{
+"id": "1",
+"category": "personal",
+"name": "groceries",
+"description": "Pick up apples and strawberries.",
+"isComplete": false
+}
+
+
+{
+"id": "2",
+"category": "personal2",
+"name": "groceries",
+"email": "hahaysh@hotmail.com",
+"description": "Pick up apples and strawberries.",
+"isComplete": false
+}
+
+
+dotnet new console -f netcoreapp3.1
+dotnet add package Microsoft.Azure.Cosmos
+
+using System.Threading.Tasks; 
+using Microsoft.Azure.Cosmos;
+
+

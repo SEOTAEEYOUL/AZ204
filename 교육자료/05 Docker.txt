@@ -1,0 +1,185 @@
+MYSUBID=$(az account show --query "id" -o tsv)
+echo $MYSUBID
+
+MYID="hahaysh12"
+MYLO="eastus"
+
+docker-machine create -d azure \
+    --azure-subscription-id $MYSUBID \
+    --azure-ssh-user hahaysh \
+    --azure-open-port 80 \
+    --azure-location $MYLO \
+    --azure-resource-group $MYID"rg" \
+    --azure-size "Standard_D2_v2" $MYID"vm"
+
+docker-machine env $MYID"vm" --shell /?
+eval $(docker-machine env $MYID"vm" --shell /?)
+
+docker ps
+docker images
+
+
+
+
+
+
+
+# Azure VM 설치된 docker 환경을 체크합니다.
+docker-machine env "hahaysh12vm" --shell /?
+eval $(docker-machine env $MYID"vm" --shell /?)
+docker-machine ip "hahaysh12vm" 
+
+# 샘플 이미지
+docker pull mcr.microsoft.com/dotnet/core/samples:aspnetapp
+# 80 포트에 앱 맵핑
+docker run -d -p 80:80 mcr.microsoft.com/dotnet/core/samples:aspnetapp
+# 배포된 앱을 브라우저에서 확인합니다.
+20.36.166.114
+
+# nginx 앱 샘플을 하나더 배포. 8080 포트에 맵핑
+docker run -d -p 8082:80 --restart=always nginx
+# 배포된 앱을 브라우저에서 확인합니다.
+20.36.166.114:8080
+
+docker rm 78e43271ecdf -f
+docker rmi
+
+
+
+
+
+
+# 먼저 웹앱 샘플 소스 가지고 오기
+git clone https://github.com/MicrosoftDocs/mslearn-hotel-reservation-system.git
+# 폴더로 이동
+cd mslearn-hotel-reservation-system/src
+# (확장자가 없는) Dockerfile을 만든다.
+echo "" > Dockerfile
+# visual studio code 실행
+code .
+# dokerfile을 편집후 저장
+# 이미지를 빌드하고 로컬에 저장. 마지막에 쩜을 꼭 찍습니다.
+docker build -t reservationsystem .
+# 이미지 확인
+docker images
+docker ps
+# 웹앱을 테스트
+docker run -p 8081:80 -d --name reservations reservationsystem
+# 브라우저에 접속 테스트 해봅니다. 예약번호1에 대한 데이터가 포함된 JSON문서가 반환되는 걸 확인합니다.
+http://localhost:8081/api/reservations/1
+# 컨테이너의 상태를 검사합니다.
+docker ps -a
+
+===============
+#1 
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+WORKDIR /src
+COPY ["HotelReservationSystem/HotelReservationSystem.csproj", "HotelReservationSystem/"]
+COPY ["HotelReservationSystemTypes/HotelReservationSystemTypes.csproj", "HotelReservationSystemTypes/"]
+RUN dotnet restore "HotelReservationSystem/HotelReservationSystem.csproj"
+
+#2
+COPY . .
+WORKDIR "/src/HotelReservationSystem"
+RUN dotnet build "HotelReservationSystem.csproj" -c Release -o /app
+
+#3
+RUN dotnet publish "HotelReservationSystem.csproj" -c Release -o /app
+
+#4
+EXPOSE 80
+WORKDIR /app
+ENTRYPOINT ["dotnet", "HotelReservationSystem.dll"]
+
+===============
+
+
+
+
+
+
+
+
+# docker 환경을 체크합니다.
+docker-machine env "hahaysh12vm" --shell /?
+eval $(docker-machine env "hahaysh12vm" --shell /?)
+
+# 리소스만들기
+az group create --name hahaysh13rg --location eastus
+az acr create --resource-group hahaysh13rg --name hahaysh13acr --sku Basic
+
+# 로그인
+az acr update --name hahaysh13acr --admin-enabled true
+az acr credential show --name hahaysh13acr --query "passwords[0].value"
+docker login hahaysh13acr.azurecr.io 
+
+# 이미지 가지고 pull/tag/push
+docker pull mcr.microsoft.com/azuredocs/aci-helloworld
+docker tag mcr.microsoft.com/azuredocs/aci-helloworld hahaysh13acr.azurecr.io/hello-world:v1
+docker push hahaysh13acr.azurecr.io/hello-world:v1
+
+# 확인
+az acr repository list --name hahaysh13acr --output table
+az acr repository show-tags --name hahaysh13acr --repository hello-world --output table
+az acr repository show -n hahaysh13acr -t hello-world:v1
+
+# 로컬에서 실행
+docker run -p 80:80 -d --name hello-world hahaysh13acr.azurecr.io/hello-world:v1
+
+
+
+
+
+
+
+
+# CloudShell에 로그인
+# Bash 셸로 변경
+
+# github에 들어가서 아래 repository를 포크합니다.
+https://github.com/Azure-Samples/acr-build-helloworld-node 
+git clone https://github.com/hahaysh/acr-build-helloworld-node
+cd acr-build-helloworld-node
+
+# 전역 선언
+MYID=hahaysh13
+RES_GROUP=$MYID"rg"
+ACR_NAME=$MYID"acr"
+
+# 리소스그룹이랑 ACR을 만듭니다.
+# az group create --resource-group $RES_GROUP --location eastus
+# az acr create --resource-group $RES_GROUP --name $ACR_NAME --sku Standard --location eastus
+az acr build --registry $ACR_NAME --image helloacrtasks:v1 .
+
+# 확인
+az acr repository list --name hahaysh13acr --output table
+az acr repository show-tags --name hahaysh13acr --repository helloacrtasks --output table
+az acr repository show -n hahaysh13acr -t helloacrtasks:v1
+
+
+
+
+
+
+
+# CloudShell에 로그인
+# Bash 셸로 변경
+
+# 리소스 만들기
+az group create --name "hahaysh14rg" --location eastus
+az container create \
+--resource-group hahaysh14rg \
+--name hahaysh14aci \
+--image mcr.microsoft.com/azuredocs/aci-helloworld \
+--ports 80 \
+--dns-name-label hahaysh14aci \
+--location eastus
+
+# ACI확인
+az container show \
+--resource-group hahaysh14rg \
+--name hahaysh14aci \
+--query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" \
+--out table
+
+# 브라우저에서 접속 확인

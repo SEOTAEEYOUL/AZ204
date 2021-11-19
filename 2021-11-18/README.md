@@ -410,5 +410,8 @@ az webapp identity assign -g hahaysh19rg -n hahaysh19webapp --identities [system
 ```
 
 ## Azure App Configuration
-
+- 응용 프로그램 설정 및 기능 플래그를 중앙에서 관리하는 서비스
+- 기능 플래그 관리를 위한 전용 UI
+- Azure 관리 ID 
+- Keys and Values 
 

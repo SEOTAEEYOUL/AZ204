@@ -1,4 +1,5 @@
 ## 2021-11-15
+
 > [Azure에서 클라우드 스토리지 관리](https://azure.microsoft.com/ko-kr/features/storage-explorer/#overview)  
 
 ## Azure CLI 를 통해서 웹 앱 만들기 (Local Git 연동 배포)

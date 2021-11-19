@@ -237,6 +237,13 @@ curl -X POST -H "aeg-sas-key: $key" -d "$event" $endpoint
 - 휴대폰 및 테블릿 같은 디바이스에 공용 정적 및 공유 콘텐츠 배달
 - 정적 콘텐츠로만 구성된 전체 웹 사이트 제공
 
+### [Azure CDN](https://docs.microsoft.com/ko-kr/azure/cdn/cdn-overview)  
+- 고대역폭 콘텐츠 배달을 위한 글로벌 CDN 솔루션
+- POP(Point-of-presence) 를 사용하는 다양한 네트워크 최적화
+  - 지리적으로 가까운 서버 사용
+![cdn-overview.png](./img/cdn-overview.png)  
+
+
 
 
 

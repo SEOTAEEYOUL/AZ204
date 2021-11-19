@@ -1,4 +1,4 @@
-# Reids
+# Azure Cache for Redis 실습결과
 
 ```
 az group create -n taeyeolrg -l eastus 

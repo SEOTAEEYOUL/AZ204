@@ -1,0 +1,44 @@
+az group create -n hahaysh25rg -l eastus 
+az redis create -l eastus -g hahaysh25rg -n hahaysh25redis --sku Basic --vm-size c0
+ 
+dotnet new console -f netcoreapp3.1
+dotnet add package StackExchange.Redis 
+
+==========================
+
+using System;
+using StackExchange.Redis;
+using System.Threading.Tasks;
+
+namespace DemoRedis
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+
+            string connectionString = "ZERGZERG";
+            using (var cache = ConnectionMultiplexer.Connect(connectionString))
+            {
+                IDatabase db = cache.GetDatabase();
+                bool setValue = await db.StringSetAsync("test:key", "100");
+                Console.WriteLine($"SET: {setValue}");
+
+                string getValue = await db.StringGetAsync("test:key");
+                Console.WriteLine($"GET: {getValue}");
+
+                var result = await db.ExecuteAsync("ping");
+                Console.WriteLine($"PING = {result.Type} : {result}");
+
+                result = await db.ExecuteAsync("flushdb");
+                Console.WriteLine($"FLUSHDB = {result.Type} : {result}");
+
+            }
+
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+
+
+========================

@@ -16,7 +16,7 @@ AZ-204 Developing Solutions for Microsoft Azure
 [one drive - 강의 자료](https://1drv.ms/u/s!AmlADRmU8M8uk_h_GY-jXnm09_asPg?e=c0BjUn)  
 [AZ-204: Microsoft Azure 솔루션 개발 - GitHub](https://github.com/MicrosoftLearning/AZ-204KO-DevelopingSolutionsforMicrosoftAzure)  
 [AZ-204 영문자료 - GitHub](https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure.git)  
-> [skilpipe.com](skilpipe.com)   
+> [skilpipe.com](https://www.skillpipe.com/#/account/login)   
 > [Microsoft Learning](https://github.com/MicrosoftLearning)  
 
 ### 강의실(teams)

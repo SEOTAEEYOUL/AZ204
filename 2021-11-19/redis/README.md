@@ -1,5 +1,6 @@
 # Azure Cache for Redis 실습결과
 
+## 실습 내용
 ```
 az group create -n taeyeolrg -l eastus 
 az redis create -l eastus -g taeyeolrg -l eastus -n taeyeolredis --sku Basic --vm-size c0

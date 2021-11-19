@@ -1,9 +1,9 @@
 # AZ 204
 
 ## 준비
-> [Azure에서 클라우드 스토리지 관리](https://azure.microsoft.com/ko-kr/features/storage-explorer/#overview)
-> [git](https://1drv.ms/u/s!AmlADRmU8M8uk_h_GY-jXnm09_asPg?e=c0BjUn)
-> [HttpRepl](https://github.com/dotnet/HttpRepl)
+> [Azure에서 클라우드 스토리지 관리](https://azure.microsoft.com/ko-kr/features/storage-explorer/#overview)  
+> [git](https://1drv.ms/u/s!AmlADRmU8M8uk_h_GY-jXnm09_asPg?e=c0BjUn)  
+> [HttpRepl](https://github.com/dotnet/HttpRepl)  
 - .NET Core가 지원되는 모든 곳에서 지원되는 가벼운 플랫폼 간 명령줄 도구입니다.
 - ASP.NET Core 웹 API를 테스트하고 결과를 보기 위한 HTTP 요청을 만드는 데 사용됩니다.
 

@@ -70,7 +70,10 @@ https://azure.microsoft.com/ko-kr/free/
 [2021-11-18](./2021-11-18/README.md)  
 [2021-11-19](./2021-11-19/README.md)  
 
-### AZ204 - Github
+
+![AzurePortal](./img/AzurePortal.png)  
+![taeyeolrg](./img/taeeyeolrg.png)
+
 
 #### …or create a new repository on the command line
 ```

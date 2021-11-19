@@ -64,13 +64,16 @@ https://azure.microsoft.com/ko-kr/free/
 
 
 ## 강의 링크
-[2021-11-15](./2021-11-15/README.md)  
-[2021-11-16](./2021-11-16/README.md)  
-[2021-11-17](./2021-11-17/README.md)  
-[2021-11-18](./2021-11-18/README.md)  
-[2021-11-19](./2021-11-19/README.md)  
+| 날자 | 강의 내용 |
+| :--- | :--- |
+| 첫쩨날 | [2021-11-15](./2021-11-15/README.md)  |  
+| 둘째날 | [2021-11-16](./2021-11-16/README.md)  |  
+| 세째날 | [2021-11-17](./2021-11-17/README.md)  |   
+| 네째날 | [2021-11-18](./2021-11-18/README.md)  |    
+| 다섯째날 | [2021-11-19](./2021-11-19/README.md)  |    
 
 
+## Azure Portal
 ![AzurePortal](./img/AzurePortal.png)  
 ![taeyeolrg](./img/taeeyeolrg.png)
 

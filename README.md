@@ -40,8 +40,8 @@ dotnet --version
 mkdir sample01
 cd sample01
 dotnet new
-#dotnet new mvc
-dotnet new mvc -f netcoreapp3.1 #3.1버전을 지정해서 생성
+dotnet new mvc -f netcoreapp3.1 # 3.1버전을 지정해서 생성
+# dotnet new mvc # 지정하지 않는 편이 좋을 수도 있음
 dotnet restore
 dotnet build
 code .   
